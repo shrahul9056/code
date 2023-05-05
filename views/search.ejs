@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%- title %> </title>
+  <link rel="stylesheet" href="/css/table.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+      <%- include('sidebar.html') %> 
+      
+      <br>  
+
+
+<div class="main">   
+  <form onsubmit="return searching()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" onkeyup="searching()">
+    </div>
+    <div>
+      <label for="mobile">Mobile No:</label>
+      <input type="text" id="mobile" name="mobile" onkeyup="searching()">
+    </div>
+    <div>
+      <button type="submit">Search</button>
+      <button type="reset">Clear</button>
+    </div>
+  </form>
+
+<div class="table-data">
+<h2>Employee List</h2>
+    <table border="1" id="table">
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+      
+        <% if(userData.length!=0) {%>
+
+          <% for (var i=0 ; i< userData.length ; i++) { %>
+          
+        <tr class='tr'>
+            <td><%=i+1; %></td>
+            <td><%=userData[i].firstName %></td>
+            <td><%=userData[i].email %></td>
+            <td><%=userData[i].city %></td>
+            <td><%=userData[i].phoneNumber %></td>
+            <td><a href="/Employee/edit?edit=<%=userData[i]._id%>">Edit</a></td>
+            <td><a href="/Employee/delete?delete=<%=userData[i]._id%>">Delete</a></td>
+        </tr>
+        <%  } %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</div>
+   <script src="/js/script.js"></script>
+</body>
+</html>

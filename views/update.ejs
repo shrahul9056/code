@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <style>
+    body{
+      background-color: rgb(163, 168, 170)
+    }
+   </style>
+  </head>
+<body>  
+<!--
+/*
+<% if (user && Object.keys(user).length !== 0) { %>
+    <h1>User Details</h1>
+    <ul>
+        <% for (const prop in user) { %>
+            <li><strong><%= prop %>:</strong> <%= user[prop] %></li>
+        <% } %>
+    </ul>
+<% } %>
+*/
+-->
+
+ 
+  
+    <input type="hidden" id="userId" value="<%= user._id %>">
+
+<div class="main">  
+  
+      <div class="container my-5">
+        <div class="card" style="width:100%;"  >
+            <div class="card-body">
+              <h5 class="card-title"><div id="hidden-element" value="Userid">Userid="<%=user.id%>"</div> </h5>
+              <form id="form">
+                 <div class="row">
+                    <div class="col">
+                      <label for="inputFirstName">First Name</label>
+                      <input type="text" value="<%=user.firstName%>" class="form-control" id="inputFirstName" placeholder="Enter first name" required>
+                    </div>
+                    <div class="col">
+                      <label for="inputLastName">Last Name</label>
+                    <input type="text" value="<%=user.lastName%>" class="form-control" id="inputLastName" placeholder="Enter last name" required>
+                    </div>
+                    <div class="col">
+                      <label for="inputEmail">Email address</label>
+                      <input type="email" value="<%=user.email%>" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="col">
+                      <label for="inputPhoneNumber">Phone Number</label>
+                      <input type="tel" value="<%=user.phoneNumber%>" class="form-control" id="inputPhoneNumber" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="col">
+                      <label for="inputAddress">Address</label>
+                      <input type="text" value="<%=user.address%>" class="form-control" id="inputAddress" placeholder="Enter address" required>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="col">
+                      <label for="inputCountry">Country</label>
+                      <select id="inputCountry" class="form-control" required> 
+                        <option value="">Select a country</option>
+                        <option value="usa" <%= user.country === 'usa' ? 'selected' : '' %>>United States</option>
+                        <option value="canada" <%= user.country === 'canada' ? 'selected' : '' %>>Canada</option>
+                        <option value="mexico" <%= user.country === 'mexico' ? 'selected' : '' %>>Mexico</option>
+                      </select>
+                    </div>
+                    
+                    <div class="col">
+                      <label for="inputCity">City</label>
+                      <select id="inputCity" class="form-control" required>
+                        <option value="">Select a city</option>
+                        <option value="new-york" <%= user.city === 'new-york' ? 'selected' : '' %>>New York</option>
+                        <option value="los-angeles" <%= user.city === 'los-angeles' ? 'selected' : '' %>>Los Angeles</option>
+                        <option value="toronto" <%= user.city === 'toronto' ? 'selected' : '' %>>Toronto</option>
+                        <option value="vancouver" <%= user.city === 'vancouver' ? 'selected' : '' %>>Vancouver</option>
+                        <option value="mexico-city" <%= user.city === 'mexico-city' ? 'selected' : '' %>>Mexico City</option>
+                      </select>
+                    </div>
+                    
+                      </div>
+                     
+                        <label for="Skills">Skills</label>
+                        <div class="row">
+                          
+                          <div class="col">
+                            <input class="form-check-input" type="checkbox" value="aws-devops" id="aws-devops" <% if (user.skills && user.skills.includes("aws-devops")) { %>checked<% } %>>
+                            <label class="form-check-label" for="aws-devops">
+                              AWS
+                            </label>
+                          </div>
+                          <div class="col">
+                            <input class="form-check-input" type="checkbox" value="full-stack-developer" id="full-stack-developer" <% if (user.skills && user.skills.includes("full-stack-developer")) { %>checked<% } %>>
+                            <label class="form-check-label" for="full-stack-developer">
+                              Full Stack Developer
+                            </label>
+                          </div>
+                          <div class="col">
+                            <input class="form-check-input" type="checkbox" value="middleware" id="middleware" <% if (user.skills && user.skills.includes("middleware")) { %>checked<% } %>>
+                            <label class="form-check-label" for="middleware">
+                              Middleware
+                            </label>
+                          </div>
+                          <div class="col">
+                            <input class="form-check-input" type="checkbox" value="devops" id="devops" <% if (user.skills && user.skills.includes("devops")) { %>checked<% } %>>
+                            <label class="form-check-label" for="devops">
+                              DevOps
+                            </label>
+                          </div>
+                          <div class="col">
+                            <input class="form-check-input" type="checkbox" value="webservices" id="webservices" <% if (user.skills && user.skills.includes("webservices")) { %>checked<% } %>>
+                            <label class="form-check-label" for="webservices">
+                              WebServices
+                            </label>
+                          </div>     
+                    </div>
+                  </div>    
+                  <input type="submit" value="Submit">
+                </form>
+              </div>        
+            </div>
+          </div>    
+        </div>
+
+
+<script src="/js/update.js"></script>
+    
+</body>
+</html>

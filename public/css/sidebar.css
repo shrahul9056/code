@@ -1,0 +1,49 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  z-index: 9999;
+  transition: left 0.3s ease;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  font-size: 24px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0 0 0;
+}
+
+.sidebar-menu li {
+  margin: 0 0 10px 0;
+}
+
+.sidebar-menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    left: 0;
+  }
+  .sidebar-toggle {
+    display: none;
+  }
+}

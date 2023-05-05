@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/home.css">
+    
+    </head>
+      <body>
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form id="form"  >
+            <h3>Login Here</h3>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" placeholder="Email" class="form-control" id="email" aria-describedby="emailHelp" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" placeholder="Password" class="form-control" id="password" autocomplete="off" required>
+              <div id="error" style="display:none;"></div>
+              <div id="success" style="display:none;"></div>
+            </div>
+            <div class="social">
+              
+            <button id="login-btn">Login</button>
+            <button ><a href="/register" style="color:rgb(30, 40, 135) ; text-decoration:none">Signup</a></button>
+          </div>
+        </form>
+    </body>
+    </html>
+     
+      <script src="js/login.js"></script>
+       
+    
+</body>
+</html>
